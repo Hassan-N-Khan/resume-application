@@ -9,6 +9,7 @@ import defaultValues from './defaultValues.js';
 function App() {
 
   const [generalInformation,setGeneralInformation] = useState(defaultValues.generalInformation);
+  const [educationalInformation,setEducationalInformation] = useState(defaultValues.resumeInformation.educationalInformation);
   return (
     <div className="app-container">
       <div>
@@ -16,11 +17,15 @@ function App() {
           setGeneralInformation={setGeneralInformation}
           generalInformation={generalInformation} 
         />
-        <EducationalInformation/>
+        <EducationalInformation
+          setEducationalInformation={setEducationalInformation}
+          educationalInformation={educationalInformation}
+        />
         <WorkExperience/>
       </div>
       <Resume 
         generalInformation={generalInformation}
+        educationalInformation={educationalInformation}
       />
     </div>
   )

@@ -1,25 +1,85 @@
 import "../styles/EducationalInformation.css";
 
-function EducationalInformation(){
-    return (
-        <div className="educational-information">
-            <h2>Educational Information</h2>
-            <button className="add-educational-information" onClick={(e) => { e.stopPropagation(); addEducationEntry(); }} >Add Education</button>
-            <form>
-                <label for="school">School</label>
-                <input type="text" id="school" class="school" placeholder="Enter School" required ></input>
+function EducationalInformation({ educationalInformation, setEducationalInformation }) {
+  const addEducation = () => {
+    const newEducation = {
+      schoolName: "",
+      degree: "",
+      graduationDate: "",
+      graduationCity: "",
+    };
+    setEducationalInformation((prev) => [...prev, newEducation]);
+  };
 
-                <label for="degree">Degree</label>
-                <input type="text" id="degree" class="degree" placeholder="Enter Degree" required ></input>
+  const handleChange = (index, e) => {
+    const { name, value } = e.target;
+    setEducationalInformation((prev) => {
+      const updated = [...prev];
+      updated[index][name] = value;
+      return updated;
+    });
+  };
 
-                <label for="graduation-date">Graduation Date</label>
-                <input type="date" id="graduation-date" class="graduation-date" required ></input>
+  return (
+    <div className="educational-information">
+      <h2>Educational Information</h2>
 
-                <label for="graduation-city">Enter City</label>
-                <input type="text" id="graduation-city" class="graduation-city" placeholder="Enter City" required ></input>
-            </form>
-        </div>
-    )
+      <button
+        type="button"
+        className="add-educational-information"
+        onClick={(e) => {
+          e.stopPropagation();
+          addEducation();
+        }}
+      >
+        Add Education
+      </button>
+
+      {educationalInformation.map((edu, index) => (
+        <form key={index} className="education-form">
+          <label htmlFor={`school-${index}`}>School</label>
+          <input
+            type="text"
+            id={`school-${index}`}
+            name="schoolName"
+            value={edu.schoolName}
+            onChange={(e) => handleChange(index, e)}
+            required
+          />
+
+          <label htmlFor={`degree-${index}`}>Degree</label>
+          <input
+            type="text"
+            id={`degree-${index}`}
+            name="degree"
+            value={edu.degree}
+            onChange={(e) => handleChange(index, e)}
+            required
+          />
+
+          <label htmlFor={`graduation-date-${index}`}>Graduation Date</label>
+          <input
+            type="text"
+            id={`graduation-date-${index}`}
+            name="graduationDate"
+            value={edu.graduationDate}
+            onChange={(e) => handleChange(index, e)}
+            required
+          />
+
+          <label htmlFor={`graduation-city-${index}`}>City</label>
+          <input
+            type="text"
+            id={`graduation-city-${index}`}
+            name="graduationCity"
+            value={edu.graduationCity}
+            onChange={(e) => handleChange(index, e)}
+            required
+          />
+        </form>
+      ))}
+    </div>
+  );
 }
 
 export default EducationalInformation;
