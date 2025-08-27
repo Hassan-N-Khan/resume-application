@@ -3,26 +3,29 @@ import "../styles/Resume.css";
 function Resume({generalInformation, educationalInformation, workExperience}){
     return (
         <div className="resume">
-            <h2>General Information</h2>
-            {generalInformation.firstName}
-            {generalInformation.lastName}
-            {generalInformation.phoneNumber}
-            {generalInformation.emailAddress}
-            {generalInformation.city}
-            <br></br>
-            <hr></hr>
-            <h2>Educational Information</h2>
+            <div className="header-information">
+                <h1>{generalInformation.firstName} {generalInformation.lastName}</h1>
+                <div className="contact-information">
+                    <p>{generalInformation.phoneNumber}</p>
+                    <p>{generalInformation.emailAddress}</p>
+                    <p>{generalInformation.city}</p>
+                </div>
+            </div>
+            <h2 className="education">Education</h2>
             {educationalInformation.map((edu, index) => (
                 <div key={index} className="education-card">
-                <p><strong>School:</strong> {edu.schoolName}</p>
-                <p><strong>Degree:</strong> {edu.degree}</p>
-                <p><strong>Graduation Date:</strong> {edu.graduationDate}</p>
-                <p><strong>City:</strong> {edu.graduationCity}</p>
+                    <div>
+                        <p>{edu.schoolName}</p>
+                        <p>{edu.degree}</p>
+                    </div>
+                    <div>
+                        <p>Graduated {edu.graduationDate}</p>
+                        <p>{edu.graduationCity}</p>
+                    </div>
                 </div>
             ))}
-            <br></br>
             <hr></hr>
-            <h2>Work Experience</h2>
+            <h2 className="work">Work Experience</h2>
             {workExperience.map((work, index) => (
                 <div key={index} className="work-card">
                 <p><strong>Company:</strong> {work.companyName}</p>

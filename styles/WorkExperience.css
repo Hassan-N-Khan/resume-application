@@ -3,3 +3,33 @@
     flex-direction: column;
     align-items: start;
 }
+
+.work-experience form label{
+    margin-top: 10px;
+    font-weight: bold;
+}
+.work-experience form input, .work-experience form textarea{
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.work-experience form input:focus, .work-experience form textarea:focus{
+    border-color: #007BFF;
+    outline: none;
+}
+.work-experience button{
+    padding: 10px 15px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.work-experience-form button{
+    margin-top:20px;
+    background-color: red;
+}
+

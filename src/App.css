@@ -1,3 +1,35 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
 .app-container{
     display: flex;
+    gap:20px;
+}
+
+.sidebar{
+    margin:20px;
+    width: 40vw;
+    height: 100vh;         /* take full viewport height */
+    overflow-y: auto;      /* vertical scrolling only inside sidebar */
+    overflow-x: hidden;    /* prevent horizontal scroll */
+    background-color: #f4f4f4;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    height: 100vh;
+}
+
+.resume-section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 250px; /* same as sidebar width */
+    padding: 20px;
+    flex-grow: 1;
+    background-color: #fff;
+    min-height: 100vh; /* ensure it takes full height */
 }

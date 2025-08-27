@@ -31,16 +31,16 @@ function WorkExperience({workExperience, setWorkExperience}){
     return (
         <div className="work-experience">
             <h2>Work Experience</h2>
-        <button
-                type="button"
-                className="add-work-experience"
-                onClick={(e) => {
-                    e.stopPropagation();
-                    addWork();
-                }}
-            >
-                Add Work
-        </button>
+            <button
+                    type="button"
+                    className="add-work-experience"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        addWork();
+                    }}
+                >
+                    Add Work
+            </button>
             {workExperience.map((work,index)=> (
             <form key={index} className="work-experience-form">
                 <label htmlFor={`company-${index}`}>Company</label>
@@ -59,14 +59,14 @@ function WorkExperience({workExperience, setWorkExperience}){
                 <input type="text" id={`location-${index}`} class="location" name="location" value={work.location} onChange={(e) => handleChange(index, e)} required ></input>
 
                 <label htmlFor={`job-description-${index}`}>Enter Job Description</label>
-                <input type="textarea" id={`job-description-${index}`} class="job-description" name="description" value={work.description} onChange={(e) => handleChange(index, e)} required ></input>
+                <textarea type="text" id={`job-description-${index}`} class="job-description" name="description" value={work.description} onChange={(e) => handleChange(index, e)} rows="10" cols="50" required ></textarea>
 
-                <button type="button" className="delete-education" 
+                <button type="button" className="delete-work" 
                     onClick={(e) => {
                         e.stopPropagation();
                         deleteWork(index);
                     }}
-                >Delete Education</button>
+                >Delete Work</button>
             </form>
             ))}
         </div>

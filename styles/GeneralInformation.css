@@ -3,3 +3,22 @@
     flex-direction: column;
     align-items: start;
 }
+
+.general-information form label{
+    margin-top: 10px;
+    font-weight: bold;
+}
+.general-information form input, .general-information form select{
+    margin-top: 5px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.general-information form input:focus, .general-information form select:focus{
+    border-color: #007BFF;
+    outline: none;
+}
+

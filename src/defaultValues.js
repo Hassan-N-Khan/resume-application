@@ -10,7 +10,7 @@ const defaultValues = {
         educationalInformation: [
             {
                 schoolName: "University of Ottawa",
-                degree: "Bachelors in Applied Science in Computer Engineering",
+                degree: "Bachelors of Applied Science in Computer Engineering",
                 graduationDate: "2001",
                 graduationCity: "Ottawa",
             }

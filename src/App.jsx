@@ -13,7 +13,7 @@ function App() {
   const [workExperience,setWorkExperience] = useState(defaultValues.resumeInformation.workExperience);
   return (
     <div className="app-container">
-      <div>
+      <div className='sidebar'>
         <GeneralInformation 
           setGeneralInformation={setGeneralInformation}
           generalInformation={generalInformation} 
@@ -27,11 +27,11 @@ function App() {
           setWorkExperience={setWorkExperience}
         />
       </div>
-      <Resume 
-        generalInformation={generalInformation}
-        educationalInformation={educationalInformation}
-        workExperience={workExperience}
-      />
+        <Resume className="resume-section"
+          generalInformation={generalInformation}
+          educationalInformation={educationalInformation}
+          workExperience={workExperience}
+        />
     </div>
   )
 }
