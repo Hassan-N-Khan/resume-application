@@ -20,6 +20,12 @@ function EducationalInformation({ educationalInformation, setEducationalInformat
     });
   };
 
+  const deleteEducation = (indexToDelete)=>{
+    setEducationalInformation((prev) =>
+      prev.filter((_, index) => index !== indexToDelete)
+    );
+  }
+
   return (
     <div className="educational-information">
       <h2>Educational Information</h2>
@@ -76,6 +82,12 @@ function EducationalInformation({ educationalInformation, setEducationalInformat
             onChange={(e) => handleChange(index, e)}
             required
           />
+          <button type="button" className="delete-education" 
+            onClick={(e) => {
+                e.stopPropagation();
+                deleteEducation(index);
+            }}
+          >Delete Education</button>
         </form>
       ))}
     </div>

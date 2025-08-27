@@ -21,6 +21,7 @@ const defaultValues = {
                 position: "Intern Software Developer",
                 startDate: "2020",
                 endDate: "2021",
+                location: "Seattle",
                 description: "Worked at microsoft."
             },
             {
@@ -28,6 +29,7 @@ const defaultValues = {
                 position: "Intern Software Developer",
                 startDate: "2021",
                 endDate: "2022",
+                location: "Toronto",
                 description: "I wish I worked here man"
             }
         ],

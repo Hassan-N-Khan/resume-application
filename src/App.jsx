@@ -10,6 +10,7 @@ function App() {
 
   const [generalInformation,setGeneralInformation] = useState(defaultValues.generalInformation);
   const [educationalInformation,setEducationalInformation] = useState(defaultValues.resumeInformation.educationalInformation);
+  const [workExperience,setWorkExperience] = useState(defaultValues.resumeInformation.workExperience);
   return (
     <div className="app-container">
       <div>
@@ -21,11 +22,15 @@ function App() {
           setEducationalInformation={setEducationalInformation}
           educationalInformation={educationalInformation}
         />
-        <WorkExperience/>
+        <WorkExperience
+          workExperience={workExperience}
+          setWorkExperience={setWorkExperience}
+        />
       </div>
       <Resume 
         generalInformation={generalInformation}
         educationalInformation={educationalInformation}
+        workExperience={workExperience}
       />
     </div>
   )
