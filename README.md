@@ -2,7 +2,7 @@
 
 A modern, interactive resume builder built with **React** that allows users to create professional resumes with a **real-time preview**.  
 
-👉 [Live Demo](https://68af836e4811ed3077d1346a--hassansresumebuilder.netlify.app/)
+👉 [Live Demo](https://hassansresumebuilder.netlify.app/)
 
 ---
 
